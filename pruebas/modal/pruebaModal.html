@@ -8,6 +8,8 @@
     <title>Ventana Modal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.1/css/bootstrap.min.css" integrity="sha512-6KY5s6UI5J7SVYuZB4S/CZMyPylqyyNZco376NM2Z8Sb8OxEdp02e1jkKk/wZxIEmjQ6DRCEBhni+gpr9c4tvA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+<!--     <script src="https://kit.fontawesome.com/dc68399ce2.js" crossorigin="anonymous" async></script>
+    <script src="https://kit.fontawesome.com/77b7943c14.js" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
@@ -87,9 +89,20 @@
                                     </div>
                                     <button type="button" class="btn btn-dark number-information_buttom" onclick="sendNumber()" id="bottomNumber">Continuar</button>
                                 </div>
-                                <!-- From to validate phone number -->
-                                <div id="success-information"  class="hidden">
-                                   
+                                <!-- Acctivación Exitosa -->
+                                <div id="success-information"  class="success-information hidden">
+                                    <div class="success-information_title">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337l-17 17-17-17-64-64-17-17L160 222.1l17 17 47 47L335 175l17-17L385.9 192l-17 17z"/></svg>
+                                        <h4>Haz activado tu probador en sevenseven.com</h4>
+                                    </div>
+                                    <div class="success-information_instruccion">
+                                        <ul>
+                                            <li><span class="success-information_instruccion-span1">1.</span> Agregar al carrito hasta 6 productos y finaliza la orden. No tienes que pagar nada hasta que los pruebes y decidas qué comprar.</li>
+                                            <li><span class="success-information_instruccion-span2">2.</span> Llegaremos en 24hrs con tu bolsa de probador y esperamos afuera mientras te lo pruebas.</li>
+                                            <li><span class="success-information_instruccion-span3">3.</span> Paga en el app de pruebatelo solo lo que amas <span>❤️</span> y entregale al mensajero lo demás.</li>
+                                        </ul>
+                                    </div>
+                                    <button type="button" class="btn btn-dark number-information_buttom" data-bs-dismiss="modal"  id="bottomNumber">Continuar</button>
                                 </div>
                             </div>
                             <!-- <div class="modal-footer">

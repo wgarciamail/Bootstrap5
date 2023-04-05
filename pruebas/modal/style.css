@@ -185,11 +185,48 @@ header {
     padding: 10px 35px 0px;
     font-size: .7em;
 }
-.number-information_buttom{
+.number-information_buttom {
     width: 200px;
     border-radius: 10px;
     margin-top: 0px;
 }
+.success-information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Información exitosa.*/
+.success-information_title{
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    column-gap: 15px;
+
+}
+.success-information_title_iconcheck {
+    width: 150px;
+    color: #008000;
+}
+.success-information_instruccion{
+    margin-top: 20px;
+    list-style-type: none;
+}
+.success-information_instruccion > ul{
+    list-style-type: none;
+}
+.success-information_instruccion-span1{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.success-information_instruccion-span2{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.success-information_instruccion-span3{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
 /*Elimina los decoradores de los campos number.*/
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
