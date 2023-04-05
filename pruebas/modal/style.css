@@ -8,24 +8,24 @@ header {
     justify-content: center;
     margin-top: 20px;
 }
-.modal-tryon{
+.modal-tryon {
     height: 570px;
     width: 360px;
     border-radius: 40px;
     margin: auto;
 }
-.modal-tryon_header{
+.modal-tryon_header {
     display: flex;
     flex-direction: column;
     align-content: center;
     border-bottom: 0;
 }
-.modal-tryon_header > .close{
+.modal-tryon_header > .close {
     display: flex;
     justify-content: flex-end;
     padding: 15px 15px 0 0;
 }
-.modal-tryon_header-title{
+.modal-tryon_header-title {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@ header {
     text-align: center;
     font-weight: 700;
 }
-.modal-tryon_header-title > span{
+.modal-tryon_header-title > span {
     background-color: #000000;
     display: flex;
     justify-content: center;
@@ -48,41 +48,41 @@ header {
     font-size: 2rem;
 }
 /* Formulario de información para la dirección.*/
-.address-information{
+.address-information {
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 5px;
 }
-.address-information_title1{
+.address-information_title1 {
     font-size: .8rem;
     margin-top: 0;
     margin-bottom: 2px;
 }
-.address-information_title2{
+.address-information_title2 {
     font-weight: 700;
 }
-.address-information_pinlocation{
+.address-information_pinlocation {
     width: 15px;
 }
-.address-information_location{
+.address-information_location {
     border-radius: 10px;
     border: none;
     background-color: rgb(212, 208, 208);
     margin-top: 5px;
     width: 260px;
 }
-.address-information_location-label{
+.address-information_location-label {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
     padding: 5px;
 }
-.address-information_location-label > p{
+.address-information_location-label > p {
   margin: 0 0 0 5px;
 }
-.address-information_input{
+.address-information_input {
     width: 260px;
     height: 35px;
     border: solid 1px lightgray;
@@ -90,61 +90,61 @@ header {
     margin-top: 10px;
     background-color: rgb(233, 232, 232);
 }
-.address-information_map > img{
+.address-information_map > img {
    width: 260px;
 }
-.address-information_buttom{
+.address-information_buttom {
     width: 260px;
     border-radius: 10px;
     margin-top: 20px;
 }
 
 /*Formulario de  información para el número de telefono.*/
-.number-information{
+.number-information {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
-.number-information_title{
+.number-information_title {
     font-weight: 700;
     font-size: 19px;
     margin-bottom: 0;
 }
-.number-information_sub-title{
+.number-information_sub-title {
     width: 300px;
     display: flex;
     flex-direction: column;
 }
-.number-information_sub-title-lebel{
+.number-information_sub-title-lebel {
     font-size: .8em;
 }
-.number-information_sub-title-lebel > span{
+.number-information_sub-title-lebel > span {
     color: #008000;
     font-weight: 600;
 }
-.number-information_phone{
+.number-information_phone {
     display: flex;
     justify-content: flex-start;
     flex-wrap: nowrap;
 }
-.number-information_phone > input, select{
+.number-information_phone > input, select {
     border: none;
     border-bottom: solid 1px #d3d3d3 ;
 }
-.number-information_phone > button{
+.number-information_phone > button {
     border: none;
     background-color: #ffffff;
     color: #0000ff;
     text-decoration-line: underline;
     font-weight: 600;
 }
-.number-information_validation{
+.number-information_validation {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.number-information_validation_title{
+.number-information_validation_title {
     width: 230px;
     text-align: center;
     font-size: 14px;
@@ -168,20 +168,20 @@ header {
     background-color: rgb(233, 232, 232);
     text-align: center;
 }
-.number-information_email{
+.number-information_email {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 300px;
 }
-.number-information_email-label{
+.number-information_email-label {
     font-size: .8em;
 }
-.number-information_email-input{
+.number-information_email-input {
     border: none;
     border-bottom: solid 1px #d3d3d3 ;
 }
-.number-information_conditions{
+.number-information_conditions {
     padding: 10px 35px 0px;
     font-size: .7em;
 }
@@ -190,13 +190,13 @@ header {
     border-radius: 10px;
     margin-top: 0px;
 }
-.success-information{
+.success-information {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 /* Información exitosa.*/
-.success-information_title{
+.success-information_title {
     display: flex;
     justify-content: center;
     width: 250px;
@@ -211,22 +211,23 @@ header {
     margin-top: 20px;
     list-style-type: none;
 }
-.success-information_instruccion > ul{
+.success-information_instruccion > ul {
     list-style-type: none;
 }
-.success-information_instruccion-span1{
+.success-information_instruccion-span1 {
     font-size: 1.2rem;
     font-weight: 600;
 }
-.success-information_instruccion-span2{
+.success-information_instruccion-span2 {
     font-size: 1.4rem;
     font-weight: 600;
 }
-.success-information_instruccion-span3{
+.success-information_instruccion-span3 {
     font-size: 1.6rem;
     font-weight: 600;
 }
 
+/* Generales para el formulario.*/
 /*Elimina los decoradores de los campos number.*/
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -235,7 +236,5 @@ input[type=number]::-webkit-outer-spin-button {
     }
 input[type=number] { -moz-appearance:textfield; }
 
-/* Generales para el formulario.*/
-.hidden {
-    display: none;
-}
+
+.hidden {  display: none; }
