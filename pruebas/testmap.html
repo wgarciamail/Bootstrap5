@@ -51,7 +51,22 @@
             });
             marker = new google.maps.Marker({
                 position: vzlaCoords,
-                map: map
+                map: map,
+                draggable: true
+            });
+            marker.addListener('click', () => {
+                marker.getMap().setZoom(18)
+                marker.getMap().setCenter(marker.getPosition())
+            });
+            marker.addListener('dragend', () => {
+                marker.getMap().setZoom(12);
+                marker.getMap().setCenter(marker.getPosition());
+                const geocoder = new google.maps.Geocoder()
+                geocoder
+                    .getcode({location: marker.getPosition()})
+                    .then(({results})=> {
+                        console.log(results);
+                    }); 
             });
             initAutocomplete();
         }
