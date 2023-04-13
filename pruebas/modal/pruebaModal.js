@@ -12,11 +12,9 @@ function sendNumber() {
 }
 
 function initMap(latitude, longitude){
-    let fillAddress = true;
     if (isEmptyVariable(latitude) || isEmptyVariable(longitude)){
         latitude = 6.42375;
         longitude = -66.58973;
-        fillAddress = false;
     }
     const vzlaCoords = {lat: latitude, lng: longitude};
     const mpDiv = document.getElementById("map");
@@ -56,7 +54,7 @@ function getAddressDirectionByCoords(marker)
 {
     const geocoder = new google.maps.Geocoder()
     console.log('getAddressDirectionByCoords');
-    console.log(marker);
+    //console.log(marker);
     geocoder.geocode({location: marker.getPosition()})
         .then(({results})=> {
             const { address_components, formatted_address, geometry, place_id, plus_code } =
@@ -83,7 +81,7 @@ function initAutocomplete(map, marker){
 
 /** Obtiene las coordenadas a partir de las coordenadas del navegador. */
 function getUbication() {
-    console.log("Esta es mi ubicación.");
+    //console.log("Esta es mi ubicación.");
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             ({coords : {latitude, longitude}}) => {
