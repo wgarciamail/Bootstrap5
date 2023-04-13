@@ -9,7 +9,7 @@ header {
     margin-top: 20px;
 }
 .modal-tryon {
-    height: 570px;
+    min-height: 570px;
     width: 360px;
     border-radius: 40px;
     margin: auto;
@@ -90,8 +90,19 @@ header {
     margin-top: 10px;
     background-color: rgb(233, 232, 232);
 }
-.address-information_map > img {
+/*Se coloca para poder mostrar el auto complete en el modal de boosttrap*/
+.pac-container {
+    z-index: 10000 !important;
+}
+.address-information_map {
    width: 260px;
+}
+
+#map{
+    height: 100%;
+    width: 260px;
+    min-height: 260px;
+
 }
 .address-information_buttom {
     width: 260px;

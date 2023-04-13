@@ -20,97 +20,108 @@
         <main>
             <div class="secctionBottom">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="initMap()">
                     Activar
                 </button>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content modal-tryon">
-                            <div class="modal-tryon_header">
-                                <div class="close">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-tryon_header-title">
-                                    <span>P</span><h5 class="modal-title" id="exampleModalLabel">Pruébatelo</h5>
-                                </div>
+               
+            </div>  
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-tryon">
+                        <div class="modal-tryon_header">
+                            <div class="close">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <!-- Form to Address -->
-                                <div id="addressData" class="address-information" >
-                                    <p class="address-information_title1">Para activar el modo probador</p>
-                                    <h5 class="address-information_title2">Ingresa tu dirección</h5>
-                                    <button type="button" class="address-information_location">
-                                        <div class="address-information_location-label">
-                                            <svg class="address-information_pinlocation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path class="fa-secondary" d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192C0 86 86 0 192 0S384 86 384 192z"/></svg>
-                                            <p>Compartir mi ubicación</p>    
-                                        </div>
-                                    </button>
-                                    <select name="direction" id="direction" class="address-information_input">
-                                        <option value="calle la ">calle la </option>
-                                    </select>
-                                    <input type="text" name="confirmAddress" id="confirmAddress" class="address-information_input" placeholder="Tocar el intercomunicador">
-                                    <p class="address-information_title1">Ej: Número de Depto / Casa</p> 
-                                    <div class="address-information_map">
-                                        <img src="img/map.png" alt="">
-                                    </div>  
-                                    <button type="button" class="btn btn-dark address-information_buttom" onclick="sendAddress()" id="bottomContinue">Correcto, Continuar</button>
+                            <div class="modal-tryon_header-title">
+                                <span>P</span><h5 class="modal-title" id="exampleModalLabel">Pruébatelo</h5>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Form to Address -->
+                            <div id="addressData" class="address-information" >
+                                <p class="address-information_title1">Para activar el modo probador</p>
+                                <h5 class="address-information_title2">Ingresa tu dirección</h5>
+                                <button type="button" class="address-information_location" onclick="getUbication()">
+                                    <div class="address-information_location-label">
+                                        <svg class="address-information_pinlocation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path class="fa-secondary" d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192C0 86 86 0 192 0S384 86 384 192z"/></svg>
+                                        <p>Compartir mi ubicación</p>    
+                                    </div>
+                                </button>
+                                <input type="text" id="place_input"class="address-information_input" placeholder="Ingresa una ubicación">
+                                <!-- <input type="text" id="place_input"class="address-information_input" placeholder="Ingresa una ubicación"> -->
+                                <input type="text" name="confirmAddress" id="confirmAddress" class="address-information_input" placeholder="Tocar el intercomunicador">
+                                <p class="address-information_title1">Ej: Número de Depto / Casa</p>
+                                <div class="address-information_map">
+                                    <div id="map"></div>
+                                </div>  
+                                <button type="button" class="btn btn-dark address-information_buttom" onclick="sendAddress()" id="bottomContinue">Correcto, Continuar</button>
+                            </div>
+                            <!-- Form to phone Number -->
+                            <div id="numberData" class="number-information hidden" >
+                                <p class="number-information_title">Confirma los datos de contacto</p>
+                                <div class="number-information_sub-title">
+                                    <label for="phoneNumber" class="number-information_sub-title-lebel">Número de <span>WhatsApp</span></label>
+                                    <div class="number-information_phone">
+                                        <select name="phoneCode" id="phoneCode" >
+                                            <option value="calle la ">+57 </option>
+                                        </select>
+                                        <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Ingrese el número de teléfono">
+                                        <button type="button">Enviar</button>
+                                    </div>
                                 </div>
-                                <!-- Form to phone Number -->
-                                <div id="numberData" class="number-information hidden" >
-                                    <p class="number-information_title">Confirma los datos de contacto</p>
-                                    <div class="number-information_sub-title">
-                                        <label for="phoneNumber" class="number-information_sub-title-lebel">Número de <span>WhatsApp</span></label>
-                                        <div class="number-information_phone">
-                                            <select name="phoneCode" id="phoneCode" >
-                                                <option value="calle la ">+57 </option>
-                                            </select>
-                                            <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Ingrese el número de teléfono">
-                                            <button type="button">Enviar</button>
-                                        </div>
+                                <div class="number-information_validation">
+                                    <p class="number-information_validation_title">Ingresa el número de teléfono que recibirás en unos segundos</p>
+                                    <div class="number-information_validation_code">
+                                        <input type="number" name="box1" id="box1" class="number-information_validation_code-input" maxlength="1"  minlength="1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" required>
+                                        <input type="number" name="box2" id="box2" class="number-information_validation_code-input" maxlength="1"  minlength="1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" required>
+                                        <input type="number" name="box3" id="box3" class="number-information_validation_code-input" maxlength="1"  minlength="1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" required>
+                                        <input type="number" name="box4" id="box4" class="number-information_validation_code-input" maxlength="1"  minlength="1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" required>
                                     </div>
-                                    <div class="number-information_validation">
-                                        <p class="number-information_validation_title">Ingresa el número de teléfono que recibirás en unos segundos</p>
-                                        <div class="number-information_validation_code">
-                                            <input type="number" name="box1" id="box1" class="number-information_validation_code-input" maxlength="1"  minlength="1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" required>
-                                            <input type="number" name="box2" id="box2" class="number-information_validation_code-input" maxlength="1"  minlength="1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" required>
-                                            <input type="number" name="box3" id="box3" class="number-information_validation_code-input" maxlength="1"  minlength="1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" required>
-                                            <input type="number" name="box4" id="box4" class="number-information_validation_code-input" maxlength="1"  minlength="1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" required>
-                                        </div>
-                                    </div>
-                                    <div class="number-information_email">
-                                        <label for="email" class="number-information_email-label">Correo electrónico</label>
-                                        <input type="email" class="number-information_email-input name="email" id="email" placeholder="Ingrese el email">
-                                    </div>
-                                    <div class="number-information_conditions">
-                                        <p>Al hacer clik en continuar, <a href="#">autorizas el tratamiento de tus datos personales</a> según nuestra <a href="#">política de privacidad</a> y <a href="#">aceptas los terminos y condiciones de nuestro cupo pre-aprobado</a></p>
-                                    </div>
-                                    <button type="button" class="btn btn-dark number-information_buttom" onclick="sendNumber()" id="bottomNumber">Continuar</button>
                                 </div>
-                                <!-- Acctivación Exitosa -->
-                                <div id="success-information"  class="success-information hidden">
-                                    <div class="success-information_title">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337l-17 17-17-17-64-64-17-17L160 222.1l17 17 47 47L335 175l17-17L385.9 192l-17 17z"/></svg>
-                                        <h4>Haz activado tu probador en sevenseven.com</h4>
-                                    </div>
-                                    <div class="success-information_instruccion">
-                                        <ul>
-                                            <li><span class="success-information_instruccion-span1">1.</span> Agregar al carrito hasta 6 productos y finaliza la orden. No tienes que pagar nada hasta que los pruebes y decidas qué comprar.</li>
-                                            <li><span class="success-information_instruccion-span2">2.</span> Llegaremos en 24hrs con tu bolsa de probador y esperamos afuera mientras te lo pruebas.</li>
-                                            <li><span class="success-information_instruccion-span3">3.</span> Paga en el app de pruebatelo solo lo que amas <span>❤️</span> y entregale al mensajero lo demás.</li>
-                                        </ul>
-                                    </div>
-                                    <button type="button" class="btn btn-dark number-information_buttom" data-bs-dismiss="modal"  id="bottomNumber">Continuar</button>
+                                <div class="number-information_email">
+                                    <label for="email" class="number-information_email-label">Correo electrónico</label>
+                                    <input type="email" class="number-information_email-input name="email" id="email" placeholder="Ingrese el email">
                                 </div>
+                                <div class="number-information_conditions">
+                                    <p>Al hacer clik en continuar, <a href="#">autorizas el tratamiento de tus datos personales</a> según nuestra <a href="#">política de privacidad</a> y <a href="#">aceptas los terminos y condiciones de nuestro cupo pre-aprobado</a></p>
+                                </div>
+                                <button type="button" class="btn btn-dark number-information_buttom" onclick="sendNumber()" id="bottomNumber">Continuar</button>
+                            </div>
+                            <!-- Acctivación Exitosa -->
+                            <div id="success-information"  class="success-information hidden">
+                                <div class="success-information_title">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337l-17 17-17-17-64-64-17-17L160 222.1l17 17 47 47L335 175l17-17L385.9 192l-17 17z"/></svg>
+                                    <h4>Haz activado tu probador en sevenseven.com</h4>
+                                </div>
+                                <div class="success-information_instruccion">
+                                    <ul>
+                                        <li><span class="success-information_instruccion-span1">1.</span> Agregar al carrito hasta 6 productos y finaliza la orden. No tienes que pagar nada hasta que los pruebes y decidas qué comprar.</li>
+                                        <li><span class="success-information_instruccion-span2">2.</span> Llegaremos en 24hrs con tu bolsa de probador y esperamos afuera mientras te lo pruebas.</li>
+                                        <li><span class="success-information_instruccion-span3">3.</span> Paga en el app de pruebatelo solo lo que amas <span>❤️</span> y entregale al mensajero lo demás.</li>
+                                    </ul>
+                                </div>
+                                <button type="button" class="btn btn-dark number-information_buttom" data-bs-dismiss="modal"  id="bottomNumber">Continuar</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
+            <!-- Mapa separado -->
+           <!--  <button type="button" class="btn btn-primary"  onclick="initMap()">
+                mostrar mapa
+            </button>
+             <input type="text" id="place_input"class="address-information_input" placeholder="Ingresa una ubicación">
+            <div class="information_mapFrame">
+                <div id="map" class="information_mapFrame"></div>
+
+            </div> -->
         </main>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.1/js/bootstrap.bundle.min.js" integrity="sha512-trzlduO3EdG7Q0xK4+A+rPbcolVt37ftugUSOvrHhLR5Yw5rsfWXcpB3CPuEBcRBCHpc+j18xtQ6YrtVPKCdsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.1/js/bootstrap.bundle.min.js" integrity="sha512-trzlduO3EdG7Q0xK4+A+rPbcolVt37ftugUSOvrHhLR5Yw5rsfWXcpB3CPuEBcRBCHpc+j18xtQ6YrtVPKCdsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRW9yZGYfDPOmVB588tnahrbQj7s1QF-A&libraries=places&v=weekly"></script>
     <script src="pruebaModal.js"></script>
 </body>
 
